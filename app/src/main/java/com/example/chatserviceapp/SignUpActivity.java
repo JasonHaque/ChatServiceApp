@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String pass=signupPassword.getText().toString().trim();
                 String confirm=confirmPassword.getText().toString().trim();
 
-                if(mail.isEmpty() || pass.isEmpty() || confirm.isEmpty()){
+                if(TextUtils.isEmpty(mail) || TextUtils.isEmpty(pass) || TextUtils.isEmpty(confirm)){
                     Toast.makeText(SignUpActivity.this,"Enter all fields properly",Toast.LENGTH_LONG).show();
                     return;
                 }

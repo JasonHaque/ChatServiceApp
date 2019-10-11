@@ -1,5 +1,6 @@
 package com.example.chatserviceapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -11,10 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LogInActivity extends AppCompatActivity {
 
+    private FirebaseAuth firebaseAuth;
     private Button directToSignup,loginButton;
     private EditText loginMail,loginPassword;
     private ProgressDialog progressDialog;
@@ -32,6 +37,7 @@ public class LogInActivity extends AppCompatActivity {
         loginPassword=findViewById(R.id.login_password);
         loginButton=findViewById(R.id.login_button);
         progressDialog = new ProgressDialog(this);
+        firebaseAuth=FirebaseAuth.getInstance();
     }
 
     void bindListeners(){
@@ -50,6 +56,25 @@ public class LogInActivity extends AppCompatActivity {
                     Toast.makeText(LogInActivity.this,"Fill up Email And Password Properly", Toast.LENGTH_LONG).show();
                     return;
                 }
+                login(mail,pass);
+            }
+        });
+    }
+    void login(String mail,String pass){
+        progressDialog.setTitle("Logging you in");
+        progressDialog.show();
+        firebaseAuth.signInWithEmailAndPassword(mail,pass).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                progressDialog.dismiss();
+                Toast.makeText(LogInActivity.this,"Successfully logged in",Toast.LENGTH_LONG).show();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressDialog.dismiss();
+                Toast.makeText(LogInActivity.this,"Failed to log in",Toast.LENGTH_LONG).show();
             }
         });
     }
