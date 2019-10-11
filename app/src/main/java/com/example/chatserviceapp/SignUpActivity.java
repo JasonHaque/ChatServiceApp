@@ -67,13 +67,13 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
     void signup(String mail,String pass){
-        progressDialog.setTitle("Logging you in");
+        progressDialog.setTitle("Signing you up");
         progressDialog.show();
         firebaseAuth.createUserWithEmailAndPassword(mail,pass).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 progressDialog.dismiss();
-                Toast.makeText(SignUpActivity.this,"Logged in now",Toast.LENGTH_LONG).show();
+                Toast.makeText(SignUpActivity.this,"Signed in now",Toast.LENGTH_LONG).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
