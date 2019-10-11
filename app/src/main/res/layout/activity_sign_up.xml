@@ -22,7 +22,7 @@
             android:layout_marginBottom="30dp"
             android:textSize="40sp"/>
         <EditText
-            android:id="@+id/login_mail"
+            android:id="@+id/signup_mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email_address"
@@ -35,7 +35,7 @@
             android:inputType="textEmailAddress"
             android:layout_marginBottom="16dp"/>
         <EditText
-            android:id="@+id/login_password"
+            android:id="@+id/signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#000000"
@@ -48,7 +48,7 @@
             android:inputType="textPassword"
             android:layout_marginBottom="16dp"/>
         <EditText
-            android:id="@+id/login_password"
+            android:id="@+id/confirm_signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#000000"
@@ -61,7 +61,7 @@
             android:inputType="textPassword"
             android:layout_marginBottom="16dp"/>
         <Button
-            android:id="@+id/signup_transfer"
+            android:id="@+id/signup_button"
             android:layout_width="match_parent"
             android:textColor="#ffffff"
             android:textSize="22sp"
@@ -69,6 +69,17 @@
             android:background="#666666"
             android:layout_gravity="center"
             android:text="@string/sign_up"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/backlogin_button"
+            android:layout_width="match_parent"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
+            android:textSize="22sp"
+            android:padding="12dp"
+            android:background="#666666"
+            android:layout_gravity="center"
+            android:text="Back"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 </ScrollView>
