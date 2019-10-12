@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import static com.example.chatserviceapp.LogInActivity.userID;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private static final int RESULT_LOAD_IMAGE = 1;
@@ -27,7 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         bindWidgets();
         bindListeners();
-        userView.setText("Welcome User \n ");
+        userView.setText("Welcome User \n "+userID);
         //profileImage.setImageResource(R.drawable.profile);
     }
     void bindWidgets(){

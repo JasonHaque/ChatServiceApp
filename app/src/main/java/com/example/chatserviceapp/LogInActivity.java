@@ -23,6 +23,7 @@ public class LogInActivity extends AppCompatActivity {
     private Button directToSignup,loginButton;
     private EditText loginMail,loginPassword;
     private ProgressDialog progressDialog;
+    public static String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +83,7 @@ public class LogInActivity extends AppCompatActivity {
     void checkcurrentUser(){
         if(firebaseAuth.getCurrentUser() != null){
             startActivity(new Intent(LogInActivity.this,ProfileActivity.class));
+            String userID=firebaseAuth.getCurrentUser().getDisplayName();
         }
     }
 }
