@@ -29,6 +29,7 @@ public class LogInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
         bindWidgets();
         bindListeners();
+        checkcurrentUser();
     }
 
     void bindWidgets(){
@@ -77,5 +78,10 @@ public class LogInActivity extends AppCompatActivity {
                 Toast.makeText(LogInActivity.this,"Failed to log in",Toast.LENGTH_LONG).show();
             }
         });
+    }
+    void checkcurrentUser(){
+        if(firebaseAuth.getCurrentUser() != null){
+            startActivity(new Intent(LogInActivity.this,ProfileActivity.class));
+        }
     }
 }
