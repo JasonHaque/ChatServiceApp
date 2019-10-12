@@ -43,7 +43,7 @@
             android:textSize="22sp"
             android:textColor="#ffffff"
             android:padding="12dp"
-            android:background="#006666"
+            android:background="#666666"
             android:text="Back"/>
     </LinearLayout>
 
