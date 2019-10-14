@@ -27,6 +27,7 @@ public class LogInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.MenuTheme);
         setContentView(R.layout.activity_log_in);
         bindWidgets();
         bindListeners();
