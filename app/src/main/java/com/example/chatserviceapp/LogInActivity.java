@@ -70,7 +70,7 @@ public class LogInActivity extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
                 progressDialog.dismiss();
                 Toast.makeText(LogInActivity.this,"Successfully logged in",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(LogInActivity.this,ProfileActivity.class));
+                startActivity(new Intent(LogInActivity.this,ChatViewActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -84,7 +84,7 @@ public class LogInActivity extends AppCompatActivity {
         if(firebaseAuth.getCurrentUser() != null){
             String[] ID=firebaseAuth.getCurrentUser().getEmail().toString().split("@");
             userID=ID[0];
-            startActivity(new Intent(LogInActivity.this,ProfileActivity.class));
+            startActivity(new Intent(LogInActivity.this,ChatViewActivity.class));
 
         }
     }

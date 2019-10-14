@@ -5,6 +5,8 @@
     android:id="@+id/toolbar"
     android:title="@string/app_name"
     android:titleTextColor="#ffffff"
-    android:background="#ff0066">
+    android:background="#ff0066"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:popupTheme="@style/MenuStyle">
 
 </Toolbar>
