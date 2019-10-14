@@ -44,6 +44,6 @@ public class ChatViewActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        })
+        });
     }
 }
