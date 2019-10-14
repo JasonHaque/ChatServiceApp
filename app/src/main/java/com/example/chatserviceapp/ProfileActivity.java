@@ -19,7 +19,7 @@ import static com.example.chatserviceapp.LogInActivity.userID;
 public class ProfileActivity extends AppCompatActivity {
 
     private static final int RESULT_LOAD_IMAGE = 1;
-    private Button logout, backToNotes;
+    private Button backToChat;
     private FirebaseAuth firebaseAuth;
     private ImageView profileImage;
     private TextView userView;
@@ -30,13 +30,12 @@ public class ProfileActivity extends AppCompatActivity {
         bindWidgets();
         bindListeners();
         userView.setText("Welcome User \n "+userID);
-        //profileImage.setImageResource(R.drawable.profile);
+        profileImage.setImageResource(R.drawable.profile);
     }
     void bindWidgets(){
-        logout=findViewById(R.id.log_out);
         firebaseAuth=FirebaseAuth.getInstance();
         userView=findViewById(R.id.user_view);
-        backToNotes=findViewById(R.id.notes_back_button);
+        backToChat=findViewById(R.id.chat_back_button);
         profileImage=findViewById(R.id.profile_image);
     }
 
@@ -49,13 +48,13 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        backToChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firebaseAuth.signOut();
-                startActivity(new Intent(ProfileActivity.this,LogInActivity.class));
+                startActivity(new Intent(ProfileActivity.this,ChatViewActivity.class));
             }
         });
+
     }
 
     @Override
