@@ -16,7 +16,6 @@ public class ChatViewActivity extends AppCompatActivity {
 //    TextView usern;
 //    FirebaseUser firebaseUser;
 //    DatabaseReference reference;
-//    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
