@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ChatViewActivity extends AppCompatActivity {
+
+      private Button gotochat;
 
 //    CircleImageView pro_img;
 //    TextView usern;
@@ -20,6 +24,14 @@ public class ChatViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_view);
+
+        gotochat=findViewById(R.id.bt1);
+        gotochat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChatViewActivity.this, ChatBodyActivity.class));
+            }
+        });
 
 //        pro_img=findViewById(R.id.profile_image);
 //        usern=findViewById(R.id.user_name);
